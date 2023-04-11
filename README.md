@@ -2,24 +2,9 @@
 
 This is a simple shopping cart application written in Java. It allows you to add products to a shopping cart, apply different pricing strategies to those products, and calculate the total price of the items in the cart.
 
-The main classes of the program are Product, ProductFactory, ShoppingCart, PricingConfigurationLoader, ProductConfigurationLoader, and the OfferStrategy interface with its implementations.
-
-## Product
-Product is a class that represents a product in the shopping cart. It has three attributes: name, price, and offerStrategy. The calculatePrice method of this class takes an integer argument, representing the quantity of the product, and returns the price based on the pricing strategy.
-
-## ProductFactory
-ProductFactory is a factory class that creates a new Product instance and adds it to the productMap. This class has two methods: addProduct and getProduct.
-
-## ShoppingCart
-ShoppingCart is a class that represents a shopping cart. It has a Map of Product objects and their quantities. The addItem method of this class takes a Product and an integer argument, representing the quantity of the product. The getTotal method of this class calculates and returns the total price of all items in the cart.
-
-
 ## Table of Contents
 - [Requirements](#requirements)
-- [Installation and Usage](#installation-and-usage)
-- [Functionality](#functionality)
 - [Design](#design)
-- [Testing](#testing)
 
 ## Requirements
 Using Java, write a simple program that calculates the price of a basket of shopping.
@@ -39,59 +24,53 @@ Items are priced as follows:
 
 Given a list of shopping, calculate the total cost of those items.
 
-## Installation and Usage
-To use this program, download the source code and compile it using a Java compiler. Then, run the compiled class file using the command line or an IDE.
-
-To calculate the price of a shopping basket, create an instance of the ShoppingBasket class and add items to it using the addItem method. Then, call the calculateTotalPrice method to get the total price of the basket, taking into account any available offers.
-
-## Functionality
-This program supports the following items and prices:
-- Apples: 35p each
-- Bananas: 20p each
-- Melons: 50p each (buy one get one free)
-- Limes: 15p each (three for the price of two)
-
-The program applies the following offer strategies:
-- BuyOneGetOneFreeOfferStrategy: applies the buy one get one free offer to melons
-- ThreeForTwoOfferStrategy: applies the three for the price of two offer to limes
-
-The program calculates the total price of the basket by applying the appropriate offer strategy to each item in the basket and adding up the prices.
-
 ## Design
-This program uses the strategy design pattern to implement the offer strategies. The OfferStrategy interface defines the methods that each offer strategy must implement. The BuyOneGetOneFreeOfferStrategy and ThreeForTwoOfferStrategy classes implement the OfferStrategy interface and define the specific logic for each offer.
 
-The Product class represents a product and its price. The ShoppingBasket class represents a shopping basket and provides methods to add items to the basket and calculate the total price of the basket.
+The main classes of the program are Product, ProductFactory, ShoppingCart, PricingConfigurationLoader, ProductConfigurationLoader, and the OfferStrategy interface with its implementations.
 
-The PricingService class acts as a mediator between the ShoppingBasket and OfferStrategy classes. It retrieves the product information from the Product class and the offer strategy from the OfferStrategy class, and calculates the offer price and total price of the basket.
 
-Product class represents a product in the shopping basket. It has the following properties:
-name (string): The name of the product.
-price (double): The price of the product.
-The PricingService class is responsible for calculating the price of the shopping basket. It has the following methods:
-addProduct(String name): Adds a product to the shopping basket.
-getTotalPrice(): Calculates and returns the total price of the shopping basket.
-getBasket(): Returns the list of products in the shopping basket.
-The OfferStrategy interface defines the structure of an offer strategy. It has the following methods:
-calculateOfferPrice(List<Product> products): Calculates and returns the offer price for the given list of products.
-getOfferType(): Returns the type of the offer.
-The BuyOneGetOneFreeOffer class implements the OfferStrategy interface and represents the "buy one get one free" offer. It has the following properties:
-product (Product): The product that is part of the offer.
-The ThreeForTwoOffer class implements the OfferStrategy interface and represents the "three for the price of two" offer. It has the following properties:
-product (Product): The product that is part of the offer.
-The Main class is the entry point for the program. It has the following methods:
-main(String[] args): Creates a new instance of the PricingService class, adds products to the shopping basket, calculates the total price of the shopping basket, and prints the result.
+# Product
+Product is a class that represents a product in the shopping cart. The calculatePrice method of this class takes an integer argument, representing the quantity of the product, and returns the price based on the pricing strategy.
+
+# ProductFactory
+ProductFactory is a factory class that creates a new Product instance and adds it to the productMap. This class has two methods: addProduct and getProduct.
+
+# ShoppingCart
+ShoppingCart is a class that represents a shopping cart. It has a Map of Product objects and their quantities. The addItem method of this class takes a Product and an integer argument, representing the quantity of the product. The getTotal method of this class calculates and returns the total price of all items in the cart.
+
+# OfferStrategy
+OfferStrategy is an interface that defines a pricing strategy for the Product class. It has a single method calculatePrice, which takes a price and a quantity and returns the total price based on the pricing strategy.
+
+# PricingConfigurationLoader
+PricingConfigurationLoader is a class that loads the pricing configuration from a config.properties file. This class has a static method loadProperties that returns a Properties object containing the pricing configuration.
+
+# ProductConfigurationLoader
+ProductConfigurationLoader is a class that loads the product configuration from a product_config.properties file. This class has a method loadProducts that returns a list of Product objects based on the product configuration.
+
+# Adding products
+To add products to the shopping cart, you will need to configure them in the product_config.properties file. This file contains a list of all the products that can be added to the cart, along with their prices and any pricing strategies that should be applied to them.
+
+# Applying pricing strategies
+When you add a product to the cart, you can specify how many of that product you want to add. The shopping cart will then apply the appropriate pricing strategy to that product based on the configuration in the product_config.properties file.
+
+There are three pricing strategies available:
+
+DefaultOfferStrategy: This is the default pricing strategy and simply multiplies the price of the product by the quantity.
+BuyOneGetOneFreeOfferStrategy: This strategy applies a "buy one, get one free" discount to the product.
+BuyThreeForTwoFreeOfferStrategy: This strategy applies a "buy three, get two free" discount to the product.
+You can also create your own custom pricing strategies by implementing the OfferStrategy interface.
+
+# Calculating the total price
+Once you have added all the products you want to purchase to the shopping cart, you can calculate the total price by calling the getTotal method on the shopping cart. This will iterate through all the products in the cart and apply the appropriate pricing strategy to each one, then return the total price of all the items in the cart.
 
 # Class Diagram
 
-![Model](https://github.com/tibcogeek/ShoppingCart/blob/master/ClassDiagram.PNG)
+![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/ClassDiagram.PNG)
 
 
 # Sequence Diagram
 
-![Model](https://github.com/tibcogeek/ShoppingCart/blob/master/SequenceDiagram.png)
-
-## Testing
-This program includes unit tests to ensure the correctness of the implementation. The tests use the JUnit testing framework and can be run using a Java testing tool such as Maven or Gradle.
+![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/SequenceDiagram.PNG)
 
 
 
