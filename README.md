@@ -5,6 +5,7 @@ This is a simple shopping cart application written in Java. It allows you to add
 ## Table of Contents
 - [Requirements](#requirements)
 - [Design](#design)
+- [Flow](#flow)
 
 ## Requirements
 Using Java, write a simple program that calculates the price of a basket of shopping.
@@ -52,6 +53,7 @@ PricingConfigurationLoader is a class that loads the pricing configuration from 
 ProductConfigurationLoader is a class that loads the product configuration from a product_config.properties file. This class has a method loadProducts that returns a list of Product objects based on the product configuration.
 
 
+## Flow
 
 ## Sequence Diagram
 
