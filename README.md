@@ -29,6 +29,10 @@ Given a list of shopping, calculate the total cost of those items.
 The main classes of the program are Product, ProductFactory, ShoppingCart, PricingConfigurationLoader, ProductConfigurationLoader, and the OfferStrategy interface with its implementations.
 
 
+## Class Diagram
+
+![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/ClassDiagram.PNG)
+
 ## Product
 Product is a class that represents a product in the shopping cart. The calculatePrice method of this class takes an integer argument, representing the quantity of the product, and returns the price based on the pricing strategy.
 
