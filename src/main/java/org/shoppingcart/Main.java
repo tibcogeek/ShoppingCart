@@ -12,7 +12,8 @@ public class Main {
         ProductFactory productFactory = loader.loadProductFactory();
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        /* Another Option
+        /* Another Option - In case you want to use array list
+
         List<String> productNames = Arrays.asList("apple", "banana", "melon", "melon", "lime", "lime", "lime");
         Map<String, Integer> productQuantities = new HashMap<>();
 
@@ -35,7 +36,7 @@ public class Main {
 
          */
 
-
+        // Add Products and Quantities
         shoppingCart.addItem(productFactory.getProduct("apple"), 1);
         shoppingCart.addItem(productFactory.getProduct("banana"), 1);
         shoppingCart.addItem(productFactory.getProduct("melon"), 2);

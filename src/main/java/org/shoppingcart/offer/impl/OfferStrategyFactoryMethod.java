@@ -15,6 +15,7 @@ public class OfferStrategyFactoryMethod implements OfferStrategyFactory {
                 return new BuyThreeForTwoFreeOfferStrategy();
             default:
                 return new DefaultOfferStrategy();
+            // Add more offers
         }
     }
 }

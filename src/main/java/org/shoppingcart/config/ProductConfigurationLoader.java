@@ -34,6 +34,7 @@ public class ProductConfigurationLoader {
         return properties;
     }
 
+    //Load Product & Offer details from config files
     public ProductFactory loadProductFactory() {
         ProductFactory productFactory = new ProductFactory();
         String[] products = productConfig.getProperty("products").split(",");

@@ -8,6 +8,7 @@ import java.util.Map;
 public class ShoppingCart {
     private Map<Product, Integer> items = new HashMap<>();
 
+    // Add Items
     public void addItem(Product product, int quantity) {
         if (items.containsKey(product)) {
             items.put(product, items.get(product) + quantity);
@@ -16,6 +17,7 @@ public class ShoppingCart {
         }
     }
 
+    // Get Total
     public double getTotal() {
         double total = 0.0;
         for (Map.Entry<Product, Integer> entry : items.entrySet()) {
