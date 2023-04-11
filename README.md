@@ -29,28 +29,28 @@ Given a list of shopping, calculate the total cost of those items.
 The main classes of the program are Product, ProductFactory, ShoppingCart, PricingConfigurationLoader, ProductConfigurationLoader, and the OfferStrategy interface with its implementations.
 
 
-# Product
+## Product
 Product is a class that represents a product in the shopping cart. The calculatePrice method of this class takes an integer argument, representing the quantity of the product, and returns the price based on the pricing strategy.
 
-# ProductFactory
+## ProductFactory
 ProductFactory is a factory class that creates a new Product instance and adds it to the productMap. This class has two methods: addProduct and getProduct.
 
-# ShoppingCart
+## ShoppingCart
 ShoppingCart is a class that represents a shopping cart. It has a Map of Product objects and their quantities. The addItem method of this class takes a Product and an integer argument, representing the quantity of the product. The getTotal method of this class calculates and returns the total price of all items in the cart.
 
-# OfferStrategy
+## OfferStrategy
 OfferStrategy is an interface that defines a pricing strategy for the Product class. It has a single method calculatePrice, which takes a price and a quantity and returns the total price based on the pricing strategy.
 
-# PricingConfigurationLoader
+## PricingConfigurationLoader
 PricingConfigurationLoader is a class that loads the pricing configuration from a config.properties file. This class has a static method loadProperties that returns a Properties object containing the pricing configuration.
 
-# ProductConfigurationLoader
+## ProductConfigurationLoader
 ProductConfigurationLoader is a class that loads the product configuration from a product_config.properties file. This class has a method loadProducts that returns a list of Product objects based on the product configuration.
 
-# Adding products
+## Adding products
 To add products to the shopping cart, you will need to configure them in the product_config.properties file. This file contains a list of all the products that can be added to the cart, along with their prices and any pricing strategies that should be applied to them.
 
-# Applying pricing strategies
+## Applying pricing strategies
 When you add a product to the cart, you can specify how many of that product you want to add. The shopping cart will then apply the appropriate pricing strategy to that product based on the configuration in the product_config.properties file.
 
 There are three pricing strategies available:
@@ -60,15 +60,15 @@ BuyOneGetOneFreeOfferStrategy: This strategy applies a "buy one, get one free" d
 BuyThreeForTwoFreeOfferStrategy: This strategy applies a "buy three, get two free" discount to the product.
 You can also create your own custom pricing strategies by implementing the OfferStrategy interface.
 
-# Calculating the total price
+## Calculating the total price
 Once you have added all the products you want to purchase to the shopping cart, you can calculate the total price by calling the getTotal method on the shopping cart. This will iterate through all the products in the cart and apply the appropriate pricing strategy to each one, then return the total price of all the items in the cart.
 
-# Class Diagram
+## Class Diagram
 
 ![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/ClassDiagram.PNG)
 
 
-# Sequence Diagram
+## Sequence Diagram
 
 ![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/SequenceDiagram.PNG)
 
