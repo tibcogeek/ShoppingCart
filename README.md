@@ -51,6 +51,13 @@ PricingConfigurationLoader is a class that loads the pricing configuration from 
 ## ProductConfigurationLoader
 ProductConfigurationLoader is a class that loads the product configuration from a product_config.properties file. This class has a method loadProducts that returns a list of Product objects based on the product configuration.
 
+
+
+## Sequence Diagram
+
+![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/SequenceDiagram.PNG)
+
+
 ## Adding products
 To add products to the shopping cart, you will need to configure them in the product_config.properties file. This file contains a list of all the products that can be added to the cart, along with their prices and any pricing strategies that should be applied to them.
 
@@ -70,14 +77,6 @@ You can also create your own custom pricing strategies by implementing the Offer
 ## Calculating the total price
 Once you have added all the products you want to purchase to the shopping cart, you can calculate the total price by calling the getTotal method on the shopping cart. This will iterate through all the products in the cart and apply the appropriate pricing strategy to each one, then return the total price of all the items in the cart.
 
-## Class Diagram
-
-![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/ClassDiagram.PNG)
-
-
-## Sequence Diagram
-
-![Model](https://github.com/tibcogeek/ShoppingCart_V2/blob/master/src/main/resources/SequenceDiagram.PNG)
 
 
 
