@@ -56,8 +56,11 @@ When you add a product to the cart, you can specify how many of that product you
 There are three pricing strategies available:
 
 **DefaultOfferStrategy**: This is the default pricing strategy and simply multiplies the price of the product by the quantity.
+
 **BuyOneGetOneFreeOfferStrategy**: This strategy applies a "buy one, get one free" discount to the product.
+
 **BuyThreeForTwoFreeOfferStrategy**: This strategy applies a "buy three, get two free" discount to the product.
+
 You can also create your own custom pricing strategies by implementing the OfferStrategy interface.
 
 ## Calculating the total price
