@@ -42,7 +42,7 @@ ShoppingCart is a class that represents a shopping cart. It has a Map of Product
 OfferStrategy is an interface that defines a pricing strategy for the Product class. It has a single method calculatePrice, which takes a price and a quantity and returns the total price based on the pricing strategy.
 
 ## PricingConfigurationLoader
-PricingConfigurationLoader is a class that loads the pricing configuration from a config.properties file. This class has a static method loadProperties that returns a Properties object containing the pricing configuration.
+PricingConfigurationLoader is a class that loads the pricing configuration from a pricing_config.properties file. This class has a static method loadProperties that returns a Properties object containing the pricing configuration.
 
 ## ProductConfigurationLoader
 ProductConfigurationLoader is a class that loads the product configuration from a product_config.properties file. This class has a method loadProducts that returns a list of Product objects based on the product configuration.
@@ -55,9 +55,9 @@ When you add a product to the cart, you can specify how many of that product you
 
 There are three pricing strategies available:
 
-DefaultOfferStrategy: This is the default pricing strategy and simply multiplies the price of the product by the quantity.
-BuyOneGetOneFreeOfferStrategy: This strategy applies a "buy one, get one free" discount to the product.
-BuyThreeForTwoFreeOfferStrategy: This strategy applies a "buy three, get two free" discount to the product.
+**DefaultOfferStrategy**: This is the default pricing strategy and simply multiplies the price of the product by the quantity.
+**BuyOneGetOneFreeOfferStrategy**: This strategy applies a "buy one, get one free" discount to the product.
+**BuyThreeForTwoFreeOfferStrategy**: This strategy applies a "buy three, get two free" discount to the product.
 You can also create your own custom pricing strategies by implementing the OfferStrategy interface.
 
 ## Calculating the total price
